@@ -10,6 +10,9 @@ Repositório para manter o tracking das aulas de Mentoria de C#
 - [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/downloads/)
 - [Git](https://git-scm.com/downloads)
 
+## Troubleshooting
+Por motivos práticos e para seguir o bom andamento das sessões, sessões de troubleshooting podem ser feitas individualmente entre as sessões, mas nunca na sessão. Para preservar o tempo de todos os participantes e mantermos o bom ritmo das aulas.
+
 ## Formato das Aulas
 
 Módulo 1
@@ -41,3 +44,6 @@ Módulo 3
 | #13 - Atributos & CustomAtributes           | Utilização de anotações em classes e de implementação de atributos customizados             |
 | #14 - Disposables & Garbage Collector       | Uso de memória no C#                                                |
 | #15 - Lambdas e Delegates                   | Uso de lambdas e delegates                                                     |
+
+## Dúvidas e Contato
+[matheus.cuba@zallpy.com](mailto:matheus.cuba@zallpy.com)
