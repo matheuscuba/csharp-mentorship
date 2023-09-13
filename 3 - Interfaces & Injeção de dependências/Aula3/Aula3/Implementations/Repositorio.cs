@@ -3,7 +3,7 @@ using System.Runtime.Remoting;
 
 namespace Aula3.Implementations
 {
-    public abstract class Repositorio<T1, T2> 
+    public abstract class Repositorio<T1> 
         where T1 : Entidade
     {
         protected List<T1> _values { get; set; } = new List<T1>();
@@ -13,13 +13,14 @@ namespace Aula3.Implementations
             _values.Add(valor);
         }
 
-        public T1 BuscarPorId(string id)
+        public async Task<T1> BuscarPorId(string id)
         {
+            await Task.Delay(3000);
             return _values.FirstOrDefault(x => x.Id == id);
         }
     }
 
-    public class RepositorioCidade : Repositorio<Cidade, Estado>
+    public class RepositorioCidade : Repositorio<Cidade>
     {
         public Cidade BuscarPeloNome(string nome)
         {
@@ -27,12 +28,7 @@ namespace Aula3.Implementations
         }
     }
 
-
-    public static class Utils {
-    
-        public static string ReturnPropriedade(object obj, string nome)
-        {
-            return (string)obj.GetType().GetProperty(nome).GetValue(obj, null);
-        }
+    public class RepositorioEstado: Repositorio<Estado>
+    {
     }
 }

@@ -31,3 +31,5 @@ C:\Users\matheus.cuba\Projects\csharp-mentorship\3 - Interfaces & Injeção de d
 C:\Users\matheus.cuba\Projects\csharp-mentorship\3 - Interfaces & Injeção de dependências\Aula3\Aula3\obj\Debug\net7.0\Aula3.pdb
 C:\Users\matheus.cuba\Projects\csharp-mentorship\3 - Interfaces & Injeção de dependências\Aula3\Aula3\obj\Debug\net7.0\Aula3.genruntimeconfig.cache
 C:\Users\matheus.cuba\Projects\csharp-mentorship\3 - Interfaces & Injeção de dependências\Aula3\Aula3\obj\Debug\net7.0\ref\Aula3.dll
+C:\Users\matheus.cuba\Projects\csharp-mentorship\3 - Interfaces & Injeção de dependências\Aula3\Aula3\bin\Debug\net7.0\Refit.dll
+C:\Users\matheus.cuba\Projects\csharp-mentorship\3 - Interfaces & Injeção de dependências\Aula3\Aula3\bin\Debug\net7.0\Refit.HttpClientFactory.dll
