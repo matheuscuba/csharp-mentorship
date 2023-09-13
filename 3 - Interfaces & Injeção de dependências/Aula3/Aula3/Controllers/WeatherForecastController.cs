@@ -1,5 +1,6 @@
 using Aula3.Clients;
 using Aula3.Implementations;
+using Aula3.Implementations.Departamento;
 using Aula3.Interfaces;
 using Aula3.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,8 @@ namespace Aula3.Controllers
         private readonly RepositorioCidade _repoCidade;
         private readonly RepositorioEstado _repoEstado;
         private readonly IViaCep _viaCepClient;
+
+        private readonly DepartamentoFinanceiro _departamentoFinanceiro;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IBancoDados banco, IViaCep viaCepClient)
         {
@@ -49,6 +52,12 @@ namespace Aula3.Controllers
             });
 
             _viaCepClient = viaCepClient;
+
+            _departamentoFinanceiro = new DepartamentoFinanceiro();
+
+            _departamentoFinanceiro
+                .ConfigurarProximo(new DepartamentoEleitoral())
+                .ConfigurarProximo(new DepartamentoUrbano());
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -67,6 +76,26 @@ namespace Aula3.Controllers
         {
             var result = await _viaCepClient.GetCepInformation(cep);
             return result.Content;
+        }
+
+        [HttpGet("EmitirNota")]
+        public async Task<string> EmitirNotaFiscal(int id)
+        {
+            var factory = new PrefeituraFactory();
+            var prefeitura = factory.CriarPrefeitura(id);
+
+            return prefeitura.EmitirNotaFiscal();
+        }
+
+        [HttpGet("Pedido")]
+        public async Task<string> VerificarPedidoPrefeitura(string pedido)
+        {
+            var result = _departamentoFinanceiro.Verificar(pedido);
+
+            if (!String.IsNullOrEmpty(result))
+                return result;
+            else
+                return "Ninguem pode verificar seu pedido";
         }
     }
 }
